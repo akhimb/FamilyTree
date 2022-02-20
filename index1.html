@@ -683,6 +683,7 @@
       function tick() {
         k++;
         meter.style.width = k + "%";
+        
         // draw directed edges with proper padding from node centers
         link.attr("d", function (d) {
           var deltaX = d.target.x - d.source.x,
@@ -696,20 +697,8 @@
             sourceY = d.source.y + sourcePadding * normY,
             targetX = d.target.x - targetPadding * normX,
             targetY = d.target.y - targetPadding * normY;
-          if (d.type.includes("I"))
             return (
               "M" + sourceX + "," + sourceY + "L" + targetX + "," + targetY
-            );
-          else
-            return (
-              "M" +
-              (sourceX + 6) +
-              "," +
-              (sourceY + 6) +
-              "L" +
-              (targetX + 6) +
-              "," +
-              (targetY + 6)
             );
         });
 
