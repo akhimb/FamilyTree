@@ -1,19 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FamilyTreeCreation.Enums
+﻿namespace FamilyTreeCreation.Enums
 {
     public enum Relation
     {
-        None = 0,
-        Mother,
-        Father,
-        Brother,
-        Sister,
-        Daughter,
-        Son,
+        NONE = 0,
+        MOTHER,
+        FATHER,
+        BROTHER,
+        SISTER,
+        DAUGHTER,
+        SON,
+        SPOUSE
     }
 }

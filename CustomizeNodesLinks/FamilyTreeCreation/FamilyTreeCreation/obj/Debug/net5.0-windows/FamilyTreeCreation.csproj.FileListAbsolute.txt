@@ -22,5 +22,8 @@ E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCrea
 E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\ref\FamilyTreeCreation.dll
 E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\FamilyTreeCreation.pdb
 E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\FamilyTreeCreation.genruntimeconfig.cache
-E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\bin\Debug\net5.0-windows\FamilyGraph.json
 E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\FamilyTreeCreation_Content.g.cs
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\AddPersonView.baml
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\AddPersonView.g.cs
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\AddRelation.baml
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\AddRelation.g.cs

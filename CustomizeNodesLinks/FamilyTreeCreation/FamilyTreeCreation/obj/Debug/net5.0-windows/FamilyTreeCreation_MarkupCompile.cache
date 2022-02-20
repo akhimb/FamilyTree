@@ -1,20 +1,20 @@
 ﻿FamilyTreeCreation
-
+1.0.0.0
 
 winexe
 C#
 .cs
-E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\
+e:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\
 FamilyTreeCreation
 none
 false
 TRACE;DEBUG;NET;NET5_0;NETCOREAPP
-E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\App.xaml
-11407045341
+e:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\App.xaml
+3-2008914771
 1474408278
-8736131957
+132082526329
 194-2028032868
-MainWindow.xaml;
+AddPersonView.xaml;AddRelation.xaml;MainWindow.xaml;
 
-False
+True
 
