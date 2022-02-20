@@ -72,23 +72,12 @@
     font-size: 12px;
 }
 
-.link.O {
-    stroke-dasharray: 0, 1 1;
-}
-
-.link.I.LowOpacity {
+.link.LowOpacity {
     opacity: 0.1;
 }
 
-.link.O.HighOpacity {
-    opacity: 1;
-}
 
-.link.I.LowOpacity {
-    opacity: 0.1;
-}
-
-.link.I.HighOpacity {
+.link.HighOpacity {
     opacity: 1;
 }
 
@@ -353,43 +342,6 @@ tr:nth-child(even) {
     color: black;
     text-decoration: none;
     cursor: pointer;
-}
-
-.centrelogo {
-    width: 150px;
-    height: 150px;
-    position: absolute;
-    margin-left: -75px;
-    margin-top: -75px;
-    left: 50%;
-    top: 50%;
-    z-index: 3;
-    display: inline-block;
-    vertical-align: middle;
-    max-height: 100%;
-    max-width: 100%;
-	 -webkit-border-radius: 150px;
-    -moz-border-radius: 150px;
-    border-radius: 150px;
-}
-
-
-.centrelogo>span:after,
-.animate>span>span {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background-image: -moz-linear-gradient( -45deg, rgba(16, 231, 238, 0.2) 25%, transparent 25%, transparent 50%, rgba(16, 231, 238, 0.2) 50%, rgba(16, 231, 238, 0.2) 75%, transparent 75%, transparent);
-    background-image: -webkit-gradient(linear, 0 0, 100% 100%, color-stop(.25, rgba(16, 231, 238, 0.1)), color-stop(.25, transparent), color-stop(.5, transparent), color-stop(.5, rgba(16, 231, 238, 0.1)), color-stop(.75, rgba(16, 231, 238, 0.1)), color-stop(.75, transparent), to(transparent));
-    z-index: 1;
-    -webkit-animation: move 1s linear infinite;
-    overflow: hidden;
-	 -webkit-border-radius: 150px;
-    -moz-border-radius: 150px;
-    border-radius: 150px;
 }
 
 .animate>span:after {

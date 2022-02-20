@@ -67,16 +67,6 @@
           class="control glyphicon glyphicon-arrow-right"
         ></span>
       </div>
-
-      <!-- <div id="loader"></div>
-
-      <div class="centrelogo" id="loadImage">
-        <span></span>
-      </div>
-
-      <div id="loadingText">
-        <b>Visualizing, Please Wait..</b>
-      </div> -->
       <div
         style="display: block"
         align="center"
@@ -177,14 +167,8 @@
         .brush()
         .x(xScale)
         .y(yScale)
-        /*    .on("brushstart", function (d) {
-                    node.each(function (d) {
-                        d.previouslySelected = shiftKey && d.selected;
-                    });
-                })*/
         .on("brush", function () {
           var extent = d3.event.target.extent();
-
           node.classed("selected", function (d) {
             return (d.selected =
               d.previouslySelected ^
@@ -246,24 +230,6 @@
       var force = d3.layout.force();
       var allowed = false;
 
-      function ModifyGraph() {
-        width = window.innerWidth;
-        height = window.innerHeight;
-
-        xScale = d3.scale.linear().domain([0, width]).range([0, width]);
-        yScale = d3.scale.linear().domain([0, height]).range([0, height]);
-
-        svg.attr("width", width).attr("height", height);
-
-        zoomer.x(xScale).y(yScale);
-
-        brusher.x(xScale).y(yScale);
-
-        rect.attr("width", width).attr("height", height);
-
-        update();
-      }
-
       FetchDataFromFile(FilePath);
 
       function createEdgeLabels() {
@@ -294,6 +260,24 @@
             var stringastooltip = d.type;
             return stringastooltip;
           });
+      }
+
+      function ModifyGraph() {
+        width = window.innerWidth;
+        height = window.innerHeight;
+
+        xScale = d3.scale.linear().domain([0, width]).range([0, width]);
+        yScale = d3.scale.linear().domain([0, height]).range([0, height]);
+
+        svg.attr("width", width).attr("height", height);
+
+        zoomer.x(xScale).y(yScale);
+
+        brusher.x(xScale).y(yScale);
+
+        rect.attr("width", width).attr("height", height);
+
+        update();
       }
 
       function getEdgeColor(type) {
@@ -332,55 +316,6 @@
             //Deselect All
             vis.selectAll("g.selected").classed("selected", false);
             break;
-
-          case 82: //r
-            //Reverse Select
-            isSelected = vis.selectAll("g.selected").classed("selected");
-            if (isSelected) {
-              var selectedNodes = vis.selectAll("g.selected");
-              var notSelectedNodes = vis.selectAll("g");
-              notSelectedNodes.classed("selected", true);
-              selectedNodes.classed("selected", false);
-            }
-            break;
-
-          case 46: // delete
-            selected_node = svg.select(".node").selectAll(".selected");
-            var selectedNodeContent = null;
-            var indextodelete = [];
-
-            if (selected_node) {
-              for (j = 0; j < selected_node[0].length; j++) {
-                for (var index = 0; index < node[0].length; index++) {
-                  if (node[0][index].__data__ !== null) {
-                    if (
-                      node[0][index].__data__.id ===
-                      selected_node[0][j].__data__.id
-                    ) {
-                      indextodelete.push(node[0][index]);
-                      deletedNodes += "," + selected_node[0][j].__data__.id;
-                    }
-                  }
-                }
-              }
-            }
-
-            indextodelete.forEach(function (item) {
-              node[0][item.__data__.index].remove();
-              spliceLinksForNode(item.__data__.id);
-            });
-
-            force
-              .linkDistance(150)
-              .nodes(d3.values(nodes))
-              .links(d3.values(links))
-              .start();
-            update();
-            EliminateIsolatedNodes();
-
-            document.getElementById("deletedNodes").value = deletedNodes;
-
-            break;
         }
         if (ctrlKey) {
           svg_graph
@@ -393,34 +328,6 @@
           vis.selectAll("g.gnode").on("mousedown.drag", null);
           brush.select(".background").style("cursor", "crosshair");
           brush.call(brusher);
-        }
-      }
-
-      function EliminateIsolatedNodes() {
-        var linkfound = false;
-        //check each node that it contains any links, if not delete them
-        node.each(function (item) {
-          linkfound = false;
-          link.each(function (itemlink) {
-            if (
-              itemlink != null &&
-              (itemlink.source.id == item.id || itemlink.target.id == item.id)
-            ) {
-              linkfound = true;
-            }
-          });
-
-          if (!linkfound && !isEmpty(item.id)) {
-            deletedNodes += "," + item.id;
-            node[0][item.index].remove();
-          }
-        });
-      }
-
-      function spliceLinksForNode(nodeID) {
-        for (var k = links.length - 1; k >= 0; k--) {
-          if (links[k].source.id === nodeID || links[k].target.id === nodeID)
-            links.splice(k, 1);
         }
       }
 
@@ -651,32 +558,19 @@
             //  d3.select(this).classed("selected", d.selected = !d.previouslySelected);
           })
           .on("mouseover", function (d) {
-            var SelectedNodeContent = d3.select(this)[0][0].__data__.id;
-            d3.selectAll("path.link.O").attr("class", "link O LowOpacity");
-            d3.selectAll("path.link.I").attr("class", "link I LowOpacity");
-            d3.selectAll("path.link.O")
+            var SelectedNodeContent = d3.select(this)[0][0].__data__.name;
+            d3.selectAll("path.link").attr("class", "link LowOpacity");
+            d3.selectAll("path.link")
               .filter(function () {
                 return (
-                  this.attributes[3].value == SelectedNodeContent ||
-                  this.attributes[2].value == SelectedNodeContent
+                  this.attributes.D.value == SelectedNodeContent ||
+                  this.attributes.S.value == SelectedNodeContent
                 );
               })
-              .attr("class", "link O HighOpacity");
-            d3.selectAll("path.link.I")
-              .filter(function () {
-                return (
-                  this.attributes[3].value == SelectedNodeContent ||
-                  this.attributes[2].value == SelectedNodeContent
-                );
-              })
-              .attr("class", "link I HighOpacity");
+              .attr("class", "link HighOpacity");
           })
           .on("mouseleave", function (d) {
-            d3.selectAll("path.link.O").attr("class", "link O HighOpacity");
-            d3.selectAll("path.link.I").attr("class", "link I HighOpacity");
-          })
-          .on("mouseup", function (d) {
-            //if (d.selected && shiftKey) d3.select(this).classed("selected", d.selected = false);
+            d3.selectAll("path.link").attr("class", "link HighOpacity");
           })
           .call(
             d3.behavior
@@ -691,7 +585,7 @@
         svg
           .append("g")
           .selectAll("marker")
-          .data(["I", "O"])
+          .data(["SON", "MOTHER","FATHER","BROTHER","SISTER","DAUGHTER","SPOUSE"])
           .enter()
           .append("marker")
           .attr("id", function (d) {
@@ -700,17 +594,14 @@
           .attr("viewBox", "0 -5 10 10")
           .attr("refX", 17)
           .attr("refY", 0)
-          .attr("markerWidth", 4)
-          .attr("markerHeight", 4)
+          .attr("markerWidth", 8)
+          .attr("markerHeight", 8)
           .attr("orient", "auto")
           .append("path")
           .attr("d", "M0,-5L10,0L0,5");
+
         node.exit().remove();
         link.exit().remove();
-      }
-
-      function isEmpty(str) {
-        return !str || 0 === str.length;
       }
 
       function createEdgeLabels() {
@@ -821,7 +712,7 @@
               (targetY + 6)
             );
         });
-        
+
         // edgelabels.attr("d", function (d) {
         //   var deltaX = d.target.x - d.source.x,
         //     deltaY = d.target.y - d.source.y,
