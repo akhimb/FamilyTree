@@ -50,16 +50,12 @@ namespace FamilyTreeCreation
             // Load content of file in a TextBlock
             if (result == true)
             {
-               if(openFileDlg.FileName.Contains("png") || openFileDlg.FileName.Contains("jpeg"))
-                {
                     //right candidate
                     if(NameTxtBox.Text!="")
                     {
                         SaveImage(ResizeImage(new Bitmap(openFileDlg.FileName), 150, 150), NameTxtBox.Text.ToLower());
                         IconPathTextBox.Text = $"./images/{NameTxtBox.Text.ToLower() + ".jpg"}";
                     }
-                }
-
             }
         }
 

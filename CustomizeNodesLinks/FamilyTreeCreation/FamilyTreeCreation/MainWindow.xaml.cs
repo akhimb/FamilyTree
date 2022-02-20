@@ -42,6 +42,7 @@ namespace FamilyTreeCreation
                 }
                 Nodes.Add(node);
             }
+            NodesDataGrid.ItemsSource = null;
             NodesDataGrid.ItemsSource = Nodes;
         }
 
@@ -51,14 +52,23 @@ namespace FamilyTreeCreation
             ModifiedLink modifiedLink;
             for (int i = 0; i < this.graph.links.Count; i++)
             {
-                var link = graph.links[i];
-                modifiedLink = new ModifiedLink();
-                modifiedLink.linkId = link.linkId ?? -1;
-                modifiedLink.source = Nodes[link.source];
-                modifiedLink.target = Nodes[link.target];
-                modifiedLink.type = (Relation)Enum.Parse(typeof(Relation), link.type);
-                ModifiedLinks.Add(modifiedLink);
+                try
+                {
+                    var link = graph.links[i];
+                    modifiedLink = new ModifiedLink();
+                    modifiedLink.linkId = link.linkId ?? -1;
+                    modifiedLink.source = Nodes[link.source];
+                    modifiedLink.target = Nodes[link.target];
+                    modifiedLink.type = (Relation)Enum.Parse(typeof(Relation), link.type);
+                    ModifiedLinks.Add(modifiedLink);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+              
             }
+            LinksDataGrid.ItemsSource = null;
             LinksDataGrid.ItemsSource = ModifiedLinks;
         }
 
@@ -72,6 +82,7 @@ namespace FamilyTreeCreation
             if (AddPersonView.SelectedNode != null)
             {
                 this.graph.UpdateNode(AddPersonView.SelectedNode);
+                AddPersonView.SelectedNode = null;
                 PopulateNodes();
             }
         }
@@ -83,6 +94,8 @@ namespace FamilyTreeCreation
             if (AddPersonView.SelectedNode != null)
             {
                 this.graph.UpdateNode(AddPersonView.SelectedNode);
+                AddPersonView.SelectedNode = null;
+                NodesDataGrid.SelectedItem = null;
                 PopulateNodes();
             }
         }
@@ -96,6 +109,7 @@ namespace FamilyTreeCreation
             if (AddRelation.SelectedLink != null && AddRelation.SelectedLink.type != null)
             {
                 this.graph.UpdateLink(AddRelation.SelectedLink);
+                AddRelation.SelectedLink = null;
                 PopulateLinks();
             }
         }
@@ -109,6 +123,8 @@ namespace FamilyTreeCreation
             if(AddRelation.SelectedLink != null && AddRelation.SelectedLink.type != null)
             {
                 this.graph.UpdateLink(AddRelation.SelectedLink);
+                AddRelation.SelectedLink = null;
+                LinksDataGrid.SelectedItem = null;
                 PopulateLinks();
             }
 
@@ -120,6 +136,7 @@ namespace FamilyTreeCreation
             if (LinksDataGrid.SelectedItem != null)
             {
                 this.graph.DeleteLink((LinksDataGrid.SelectedItem as ModifiedLink).linkId);
+                LinksDataGrid.SelectedItem = null;
                 PopulateLinks();
             }
         }
@@ -129,6 +146,7 @@ namespace FamilyTreeCreation
             if (NodesDataGrid.SelectedItem != null)
             {
                 this.graph.DeleteNode((NodesDataGrid.SelectedItem as Node).id);
+                NodesDataGrid.SelectedItem = null;
                 PopulateNodes();
                 PopulateLinks();
             }

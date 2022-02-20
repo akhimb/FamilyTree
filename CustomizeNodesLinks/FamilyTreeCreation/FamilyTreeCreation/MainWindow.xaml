@@ -11,132 +11,134 @@
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         WindowStyle="ToolWindow">
-    <TabControl>
-        <TabItem Header="Nodes">
-            <Grid Margin="20">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <TextBlock Grid.Row="0"
-                           HorizontalAlignment="Center"
-                           FontSize="20"
-                           VerticalAlignment="Top"
-                           Margin="10">Nodes</TextBlock>
-                <Button Grid.Row="0"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Width="60"
-                        Height="30"
-                        ToolTip="Add new person."
-                        Click="AddButton_Click">+ NEW</Button>
-                <Button Grid.Row="0"
-                        x:Name="EditButton"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Width="60"
-                        Height="30"
-                        Margin="69 0 0 0"
-                        ToolTip="Edit person."
-                        Click="EditButton_Click">EDIT</Button>
-                <Button Grid.Row="0"
-                        x:Name="DeleteNodeButton"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Width="80"
-                        Height="30"
-                        Margin="140 0 0 0"
-                        ToolTip="Delete Node."
-                        Click="DeleteNodeButton_Click">Delete</Button>
-                <DataGrid x:Name="NodesDataGrid"
-                          Grid.Row="1"
-                          BorderBrush="Black"
-                          BorderThickness="2"
-                          AutoGenerateColumns="False"
-                          CanUserAddRows="false">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn IsReadOnly="True"
-                                            Header="ID"
-                                            Binding="{Binding id}" />
-                        <DataGridTextColumn IsReadOnly="True"
-                                            Header="Name"
-                                            Binding="{Binding name}" />
-                        <DataGridTextColumn IsReadOnly="True"
-                                            Header="Designation"
-                                            Binding="{Binding designation}" />
-                        <DataGridTextColumn Binding="{Binding icon}"
-                                            IsReadOnly="True" />
-                        <DataGridCheckBoxColumn IsReadOnly="True"
-                                                Header="Is Male"
-                                                Width="*"
-                                                Binding="{Binding isMale}" />
-                    </DataGrid.Columns>
+    <Grid>
+        <TabControl>
+            <TabItem Header="Nodes">
+                <Grid Margin="20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0"
+                               HorizontalAlignment="Center"
+                               FontSize="20"
+                               VerticalAlignment="Top"
+                               Margin="10">Nodes</TextBlock>
+                    <Button Grid.Row="0"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Width="60"
+                            Height="30"
+                            ToolTip="Add new person."
+                            Click="AddButton_Click">+ NEW</Button>
+                    <Button Grid.Row="0"
+                            x:Name="EditButton"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Width="60"
+                            Height="30"
+                            Margin="69 0 0 0"
+                            ToolTip="Edit person."
+                            Click="EditButton_Click">EDIT</Button>
+                    <Button Grid.Row="0"
+                            x:Name="DeleteNodeButton"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Width="80"
+                            Height="30"
+                            Margin="140 0 0 0"
+                            ToolTip="Delete Node."
+                            Click="DeleteNodeButton_Click">Delete</Button>
+                    <DataGrid x:Name="NodesDataGrid"
+                              
+                              Grid.Row="1"
+                              BorderBrush="Black"
+                              BorderThickness="2"
+                              AutoGenerateColumns="False"
+                              CanUserAddRows="false">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn IsReadOnly="True"
+                                                Header="ID"
+                                                Binding="{Binding id}" />
+                            <DataGridTextColumn IsReadOnly="True"
+                                                Header="Name"
+                                                Binding="{Binding name}" />
+                            <DataGridTextColumn IsReadOnly="True"
+                                                Header="Designation"
+                                                Binding="{Binding designation}" />
+                            <DataGridTextColumn Binding="{Binding icon}"
+                                                IsReadOnly="True" />
+                            <DataGridCheckBoxColumn IsReadOnly="True"
+                                                    Header="Is Male"
+                                                    Width="*"
+                                                    Binding="{Binding isMale}" />
+                        </DataGrid.Columns>
 
-                </DataGrid>
-            </Grid>
-        </TabItem>
-        <TabItem Header="Links">
-            <Grid Margin="20">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="4*" />
-                    <ColumnDefinition Width="373*" />
-                </Grid.ColumnDefinitions>
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="50" />
-                    <RowDefinition />
-                </Grid.RowDefinitions>
-                <TextBlock Text="Links"
-                           FontSize="20"
-                           Grid.Row="0"
-                           VerticalAlignment='Top'
-                           HorizontalAlignment="Left"
-                           Grid.Column="1"
-                           Margin="347,0,0,0" />
-                <Button x:Name="AddLinkButton"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Width="80"
-                        Height="30"
-                        ToolTip="Add new link."
-                        Click="AddLinkButton_Click"
-                        Grid.ColumnSpan="2">+ NEW LINK</Button>
-                <Button x:Name="EditLinkButton"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Width="80"
-                        Height="30"
-                        Margin="82,0,0,0"
-                        ToolTip="Edit link."
-                        Click="EditLinkButton_Click"
-                        Grid.Column="1">EDIT</Button>
-                <Button x:Name="DeleteLinkButton"
-                        HorizontalAlignment="Left"
-                        VerticalAlignment="Center"
-                        Width="80"
-                        Height="30"
-                        Margin="172,0,0,0"
-                        ToolTip="Delete link."
-                        Click="DeleteLinkButton_Click"
-                        Grid.Column="1">Delete</Button>
-                <DataGrid                           AutoGenerateColumns="False"
-                          CanUserAddRows="False"
-                          x:Name="LinksDataGrid"
-                          Grid.Row="1"
-                          IsReadOnly="true"
-                          Grid.ColumnSpan="2">
-                    <DataGrid.Columns>
-                        <DataGridTextColumn Header="ID"
-                                            Binding="{Binding linkId}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Source"
-                                            Binding="{Binding source.name}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Relation"
-                                            Binding="{Binding type}"></DataGridTextColumn>
-                        <DataGridTextColumn Header="Target"
-                                            Binding="{Binding target.name}"></DataGridTextColumn>
-                    </DataGrid.Columns>
-                </DataGrid>
-            </Grid>
-        </TabItem>
-    </TabControl>
-
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Links">
+                <Grid Margin="20">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="4*" />
+                        <ColumnDefinition Width="373*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="50" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <TextBlock Text="Links"
+                               FontSize="20"
+                               Grid.Row="0"
+                               VerticalAlignment='Top'
+                               HorizontalAlignment="Left"
+                               Grid.Column="1"
+                               Margin="347,0,0,0" />
+                    <Button x:Name="AddLinkButton"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Width="80"
+                            Height="30"
+                            ToolTip="Add new link."
+                            Click="AddLinkButton_Click"
+                            Grid.ColumnSpan="2">+ NEW LINK</Button>
+                    <Button x:Name="EditLinkButton"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Width="80"
+                            Height="30"
+                            Margin="82,0,0,0"
+                            ToolTip="Edit link."
+                            Click="EditLinkButton_Click"
+                            Grid.Column="1">EDIT</Button>
+                    <Button x:Name="DeleteLinkButton"
+                            HorizontalAlignment="Left"
+                            VerticalAlignment="Center"
+                            Width="80"
+                            Height="30"
+                            Margin="172,0,0,0"
+                            ToolTip="Delete link."
+                            Click="DeleteLinkButton_Click"
+                            Grid.Column="1">Delete</Button>
+                    <DataGrid                           AutoGenerateColumns="False"
+                                                        CanUserAddRows="False"
+                                                        x:Name="LinksDataGrid"
+                                                        Grid.Row="1"
+                                                        IsReadOnly="true"
+                                                        Grid.ColumnSpan="2">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="ID"
+                                                Binding="{Binding linkId}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Source"
+                                                Binding="{Binding source.name}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Relation"
+                                                Binding="{Binding type}"></DataGridTextColumn>
+                            <DataGridTextColumn Header="Target"
+                                                Binding="{Binding target.name}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
 </Window>

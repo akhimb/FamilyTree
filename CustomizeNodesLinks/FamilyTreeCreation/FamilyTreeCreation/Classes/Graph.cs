@@ -35,14 +35,14 @@ namespace FamilyTreeCreation.Classes
             {
                 this.DeleteLink(LinksToDelete[i]);
             }
-            UpdateJSONFile();
+            SaveToJSONFile();
         }
 
         public void DeleteLink(int? linkId)
         {
             var LinkToDelete = this.links.Where(x => x.linkId == linkId).FirstOrDefault();
             this.links.Remove(LinkToDelete);
-            UpdateJSONFile();
+            SaveToJSONFile();
         }
 
         public void UpdateLink(Link link)
@@ -61,7 +61,7 @@ namespace FamilyTreeCreation.Classes
                 link.linkId = this.links.Count+1;
                 this.links.Add(link);
             }
-            UpdateJSONFile();
+            SaveToJSONFile();
         }
 
         public void UpdateNode(Node node)
@@ -80,11 +80,10 @@ namespace FamilyTreeCreation.Classes
                 node.id = (this.nodes.Count + 1).ToString();
                 this.nodes.Add(node);
             }
-            UpdateJSONFile();
-
+            SaveToJSONFile();
         }
 
-        private void UpdateJSONFile()
+        public void SaveToJSONFile()
         {
             using (StreamWriter sw = new(jsonFile))
             {
