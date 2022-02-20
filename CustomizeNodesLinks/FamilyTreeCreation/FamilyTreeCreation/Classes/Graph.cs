@@ -42,6 +42,7 @@ namespace FamilyTreeCreation.Classes
         {
             var LinkToDelete = this.links.Where(x => x.linkId == linkId).FirstOrDefault();
             this.links.Remove(LinkToDelete);
+            UpdateJSONFile();
         }
 
         public void UpdateLink(Link link)

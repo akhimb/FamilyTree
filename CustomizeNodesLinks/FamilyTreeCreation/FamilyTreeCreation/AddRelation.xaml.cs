@@ -2,6 +2,7 @@
 using FamilyTreeCreation.Enums;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows;
 
 namespace FamilyTreeCreation
@@ -32,6 +33,7 @@ namespace FamilyTreeCreation
             SourceComboBox.ItemsSource = NodeList;
             TargetComboBox.ItemsSource = NodeList;
             RelationComboBox.ItemsSource = RelationList;
+            SourceComboBox.Focus();
         }
 
         public AddRelation(ModifiedLink modifiedLink)
@@ -45,6 +47,7 @@ namespace FamilyTreeCreation
             SourceComboBox.SelectedItem = modifiedLink.source.name;
             TargetComboBox.SelectedItem = modifiedLink.target.name;
             RelationComboBox.SelectedItem = modifiedLink.type.ToString();
+            SourceComboBox.Focus();
         }
 
         private void ImageBrowseButton_Click(object sender, RoutedEventArgs e)

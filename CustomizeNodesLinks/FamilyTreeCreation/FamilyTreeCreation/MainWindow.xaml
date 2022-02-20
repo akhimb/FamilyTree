@@ -75,8 +75,7 @@
                 </DataGrid>
             </Grid>
         </TabItem>
-        <TabItem Header="Links"
-                 IsSelected="True">
+        <TabItem Header="Links">
             <Grid Margin="20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="4*" />
@@ -119,8 +118,7 @@
                         ToolTip="Delete link."
                         Click="DeleteLinkButton_Click"
                         Grid.Column="1">Delete</Button>
-                <DataGrid FontSize="15"
-                          AutoGenerateColumns="False"
+                <DataGrid                           AutoGenerateColumns="False"
                           CanUserAddRows="False"
                           x:Name="LinksDataGrid"
                           Grid.Row="1"

@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "knOIGXYdLXaFDk8hbmcNurzhwiZr7jLQOOetQw++5VVeVdXRaK+z7ofXgAZOw91usPRZLK/iLyZKZt9b+0RDbw==",
+  "dgSpecHash": "ubwKrbOWc8AzyvphhgGVuUDQgHlE9jtRmQJGNHsXOZn2i2qDhq9zH9P2lgRbeSmlFP9gyZ7gsUUN9plExTXcEA==",
   "success": true,
   "projectFilePath": "E:\\Git-Projects\\FamilyTree\\CustomizeNodesLinks\\FamilyTreeCreation\\FamilyTreeCreation\\FamilyTreeCreation.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\Totto\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512"
+    "C:\\Users\\Totto\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
+    "C:\\Users\\Totto\\.nuget\\packages\\newtonsoft.json\\13.0.1\\newtonsoft.json.13.0.1.nupkg.sha512",
+    "C:\\Users\\Totto\\.nuget\\packages\\system.drawing.common\\6.0.0\\system.drawing.common.6.0.0.nupkg.sha512"
   ],
   "logs": []
 }

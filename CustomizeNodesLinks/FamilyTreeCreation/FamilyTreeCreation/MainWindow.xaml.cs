@@ -93,7 +93,7 @@ namespace FamilyTreeCreation
                                     select node.name).ToList();
             AddRelation relationView = new();
             relationView.ShowDialog();
-            if (AddRelation.SelectedLink != null)
+            if (AddRelation.SelectedLink != null && AddRelation.SelectedLink.type != null)
             {
                 this.graph.UpdateLink(AddRelation.SelectedLink);
                 PopulateLinks();
@@ -106,7 +106,7 @@ namespace FamilyTreeCreation
                                     select node.name).ToList();
             AddRelation relationView = new(LinksDataGrid.SelectedItem as ModifiedLink);
             relationView.ShowDialog();
-            if(AddRelation.SelectedLink != null )
+            if(AddRelation.SelectedLink != null && AddRelation.SelectedLink.type != null)
             {
                 this.graph.UpdateLink(AddRelation.SelectedLink);
                 PopulateLinks();

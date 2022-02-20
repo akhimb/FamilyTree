@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="Add / Update Relation"
-        Height="350"
+        Height="360"
         Width="500"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
@@ -16,9 +16,9 @@
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
             <RowDefinition Height="50"/>
-            <RowDefinition Height="30"/>
-            <RowDefinition Height="50" />
-            <RowDefinition Height="*" />
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="30" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="150"/>
@@ -54,11 +54,14 @@
                  Margin="5"
                  />
         
-        <DockPanel HorizontalAlignment="Left" Grid.Column="0" Margin="20 0 20 0" Grid.ColumnSpan="2" Grid.Row="5">
+        <DockPanel HorizontalAlignment="Center" Grid.Column="0"  Grid.ColumnSpan="2" Grid.Row="5">
             <Button x:Name ="SaveButton" Width="150"
                     FontSize="20"
-                    Click="SaveButton_Click" Margin="0 0 20 0">Save</Button>
+                    Click="SaveButton_Click"
+                    Margin="0 0 20 0"
+                    Height="50">Save</Button>
             <Button Width="150" FontSize="20"
+                    Height="50"
                     Click="Button_Click">Close</Button>
         </DockPanel>
         

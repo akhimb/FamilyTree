@@ -27,3 +27,8 @@ E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCrea
 E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\AddPersonView.g.cs
 E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\AddRelation.baml
 E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\obj\Debug\net5.0-windows\AddRelation.g.cs
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\bin\Debug\net5.0-windows\Microsoft.Win32.SystemEvents.dll
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\bin\Debug\net5.0-windows\System.Drawing.Common.dll
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\Microsoft.Win32.SystemEvents.dll
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp3.1\System.Drawing.Common.dll
+E:\Git-Projects\FamilyTree\CustomizeNodesLinks\FamilyTreeCreation\FamilyTreeCreation\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp3.1\System.Drawing.Common.dll
