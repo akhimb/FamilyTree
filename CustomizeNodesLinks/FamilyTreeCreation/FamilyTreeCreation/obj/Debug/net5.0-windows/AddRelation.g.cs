@@ -84,7 +84,7 @@ namespace FamilyTreeCreation {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/FamilyTreeCreation;component/addrelation.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/FamilyTreeCreation;V1.0.0.0;component/addrelation.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\AddRelation.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);

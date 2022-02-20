@@ -11,7 +11,7 @@ namespace FamilyTreeCreation.Classes
     {
         public List<Link> links { get; set; }
         public List<Node> nodes { get; set; }
-        private string jsonFile = "FamilyGraph.json";
+        private string jsonFile = @"E:\Git-Projects\FamilyTree\FamilyGraph.json";
 
         public void Add()
         {
