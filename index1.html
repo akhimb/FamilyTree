@@ -480,7 +480,7 @@
             div.transition().duration(500).style("opacity", 0);
           });
 
-        createEdgeLabels();
+       createEdgeLabels();
 
         node = node.data(d3.values(nodes));
 
@@ -727,7 +727,7 @@
 
       function ApplyForce() {
         force
-          .charge(-1200)
+          .charge(-2500)
           //.gravity(0.04)
           .friction(0.9)
           // .attraction(100)
